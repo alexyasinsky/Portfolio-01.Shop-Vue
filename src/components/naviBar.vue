@@ -1,22 +1,10 @@
 <template>
-  <!-- <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div> -->
-
-    <div>
-    <div class="wrapper">
-      <myHeader />
-     <!-- <naviBar /> -->
   <nav class="menu padding-site">
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/' class="menu__link">Home</router-link>
+      <a class="menu__link" href="index.html">Home</a>
     </div>
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Men</router-link>
+      <a class="menu__link" href="catalog.html">Men</a>
       <div class="menu__mega menu__mega_nav">
         <div class="menu__megacolumn">
           <ul class="menu__megabox">
@@ -57,12 +45,12 @@
             <li><a href="#">Sweaters/Knits</a></li>
             <li><a href="#">Jackets/Coats</a></li>
           </ul>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
+          <img src="../assets/imgs/megamenu banner.png" alt="megamenu banner" />
         </div>
       </div>
     </div>
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Women</router-link>
+      <a class="menu__link" href="catalog.html">Women</a>
       <div class="menu__mega menu__mega_nav">
         <div class="menu__megacolumn">
           <ul class="menu__megabox">
@@ -103,12 +91,12 @@
             <a>Sweaters/Knits</a>
             <a>Jackets/Coats</a>
           </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
+          <img src="../assets/imgs/megamenu banner.png" alt="megamenu banner" />
         </div>
       </div>
     </div>
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Kids</router-link>
+      <a class="menu__link" href="catalog.html">Kids</a>
       <div class="menu__mega menu__mega_nav menu__mega_middle">
         <div class="menu__megacolumn">
           <ul class="menu__megabox">
@@ -149,12 +137,12 @@
             <a>Sweaters/Knits</a>
             <a>Jackets/Coats</a>
           </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
+          <img src="../assets/imgs/megamenu banner.png" alt="megamenu banner" />
         </div>
       </div>
     </div>
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Accessories</router-link>
+      <a class="menu__link" href="catalog.html">Accessories</a>
       <div class="menu__mega menu__mega_nav menu__mega_middle">
         <div class="menu__megacolumn">
           <ul class="menu__megabox">
@@ -195,12 +183,12 @@
             <a>Sweaters/Knits</a>
             <a>Jackets/Coats</a>
           </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
+          <img src="../assets/imgs/megamenu banner.png" alt="megamenu banner" />
         </div>
       </div>
     </div>
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Featured</router-link>
+      <a class="menu__link" href="catalog.html">Featured</a>
       <div class="menu__mega menu__mega_nav menu__mega_last">
         <div class="menu__megacolumn">
           <ul class="menu__megabox">
@@ -241,12 +229,12 @@
             <a>Sweaters/Knits</a>
             <a>Jackets/Coats</a>
           </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
+          <img src="../assets/imgs/megamenu banner.png" alt="megamenu banner" />
         </div>
       </div>
     </div>
     <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Hot Deals</router-link>
+      <a class="menu__link" href="catalog.html">Hot Deals</a>
       <div class="menu__mega menu__mega_nav menu__mega_last">
         <div class="menu__megacolumn">
           <ul class="menu__megabox">
@@ -287,48 +275,15 @@
             <a>Sweaters/Knits</a>
             <a>Jackets/Coats</a>
           </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
+          <img src="../assets/imgs/megamenu banner.png" alt="megamenu banner" />
         </div>
       </div>
     </div>
   </nav>
-  <router-view/>
-
-      <subscribeSection/>
-      <div class="clr"></div>
-    </div>
-    <myFooter />
-  </div>
 </template>
 
 <script>
-  import myHeader from './components/header.vue';
-  import myFooter from './components/footer.vue';
-  // import naviBar from '../components/naviBar.vue'; // расширение дописываем обязательно, иначе webserver не сработает
-  import subscribeSection from './components/subscribeSection.vue';
-
-export default {
-  components: {
-    myHeader,
-    myFooter,
-    // naviBar,
-    subscribeSection,
-  },
-
-  methods: {
-    // parentGetData(url) {
-    //   // можно методы сохранять в родительском компоненте. Обращаемся к нему в cart,vue
-    //   return fetch(url).then((data) => data.json());
-    // },
-  },
-};
-
-
+export default {};
 </script>
 
-
-<style lang="scss">
-
-</style>
-
-
+<style></style>

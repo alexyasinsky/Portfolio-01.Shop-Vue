@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-1.png", 
+    "name": "Mango People T-shirt", 
+    "price": "52.00"
+  },
+  {
+    "id": 2, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-2.png", 
+    "name": "Banana People T-shirt", 
+    "price": "122.00"
+  },
+  {
+    "id": 3, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-3.png", 
+    "name": "Apple People T-shirt", 
+    "price": "68.00"
+  },
+  {
+    "id": 4, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-4.png", 
+    "name": "Cherry People T-shirt", 
+    "price": "40.00"
+  },
+  {
+    "id": 5, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-5.png", 
+    "name": "Cucumber People T-shirt", 
+    "price": "152.00"
+  },
+  {
+    "id": 6, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-6.png", 
+    "name": "Pineapple People T-shirt", 
+    "price": "2.00"
+  },
+  {
+    "id": 7, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-7.png", 
+    "name": "Coconut People T-shirt", 
+    "price": "29.00"
+  },
+  {
+    "id": 8, 
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-8.png", 
+    "name": "Dragonfruit People T-shirt", 
+    "price": "500.00"
+  }
+]
+  

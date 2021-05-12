@@ -1,0 +1,75 @@
+<template>
+  <footer>
+    <nav class="f-link__section padding-site">
+      <div class="f-link__left">
+        <div class="logo">
+          <a href="index.html"
+            ><img src="../assets/imgs/logo.png" alt="logo"
+          /></a>
+          <p>bran<span>d</span></p>
+        </div>
+        <p class="f-link__desc">
+          Objectively transition extensive data rather than cross functional
+          solutions. Monotonectally syndicate multidisciplinary materials before
+          go forward benefits. Intrinsicly syndicate an expanded array of
+          processes and cross-unit partnerships.
+        </p>
+        <p class="f-link__desc">
+          Efficiently plagiarize 24/365 action items and focused infomediaries.
+          Distinctively seize superior initiatives for wireless technologies.
+          Dynamically optimize.
+        </p>
+      </div>
+      <div class="f-link__right">
+        <div class="f-link__column">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="f-link__column">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Tearms & Condition</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">How to Buy</a></li>
+            <li><a href="#">How to Sell</a></li>
+            <li><a href="#">Promotion</a></li>
+          </ul>
+        </div>
+        <div class="f-link__column">
+          <h3>Shop Category</h3>
+          <ul>
+            <li><a href="catalog.html">Men</a></li>
+            <li><a href="catalog.html">Women</a></li>
+            <li><a href="catalog.html">Child</a></li>
+            <li><a href="catalog.html">Apparel</a></li>
+            <li><a href="catalog.html">Brows All</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="copyright padding-site">
+      <div class="copyright__leftbox">
+        <p>&copy; 2017 Brand All Rights Reserved.</p>
+      </div>
+      <div class="copyright__rightbox">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      </div>
+    </section>
+  </footer>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style></style>
