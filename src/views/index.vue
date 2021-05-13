@@ -8,40 +8,40 @@
         </section>
         <section class="category__section padding-site">
           <div class="category__column">
-            <a href="catalog.html">
+            <router-link to="/catalog">
               <div class="category category_men">
                 <div class="category__text">
                   <h3>Hot deal</h3>
                   <h2>For men</h2>
                 </div>
               </div>
-            </a>
-            <a href="catalog.html">
+            </router-link>
+            <router-link to="/catalog">
               <div class="category category_accessories">
                 <div class="category__text">
                   <h3>Luxurious & Trendy</h3>
                   <h2>Accessories</h2>
                 </div>
               </div>
-            </a>
+            </router-link>
           </div>
           <div class="category__column">
-            <a href="catalog.html">
+            <router-link to="/catalog">
               <div class="category category_women">
                 <div class="category__text">
                   <h3>30% Offer</h3>
                   <h2>Women</h2>
                 </div>
               </div>
-            </a>
-            <a href="catalog.html">
+            </router-link>
+            <router-link to="/catalog">
               <div class="category category_kids">
                 <div class="category__text">
                   <h3>New arrivals</h3>
                   <h2>For Kids</h2>
                 </div>
               </div>
-            </a>
+            </router-link>
           </div>
         </section>
         <section class="product__section padding-site">
@@ -50,10 +50,9 @@
           <!-- product__box -->
           <catalog />
           <button
-            onClick="location.href='catalog.html'"
             class="product__button hover"
           >
-            Browse All Product <i class="fas fa-long-arrow-alt-right"></i>
+            <router-link to="/catalog">Browse all product <i class="fas fa-long-arrow-alt-right"></i></router-link> 
           </button>
         </section>
         <section class="feature__section feature__section_index padding-site">

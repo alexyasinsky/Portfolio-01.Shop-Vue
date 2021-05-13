@@ -2,9 +2,9 @@
         <header class=" header padding-site">
         <div class="header__leftbox">
           <div class="logo">
-            <a href="index.html"
-              ><img src="../assets/imgs/logo.png" alt="logo"
-            /></a>
+            <router-link to="/">
+              <img src="../assets/imgs/logo.png" alt="logo"/>
+            </router-link>
             <p>bran<span>d</span></p>
           </div>
           <details class="header__search-config">
@@ -48,7 +48,9 @@
           <div class="cartdrop">
             <button @click='showCart = !showCart' class="hover cartdrop__showButton"></button>
             <!-- cartdrop__box -->
-            <cart  v-show="showCart" />
+            <cart  v-show="showCart">
+              <router-link to="/cart">Go to Cart</router-link>
+              </cart>
           </div>
           <button class="header__button button hover">
             My Account <i class="fas fa-caret-down"></i>

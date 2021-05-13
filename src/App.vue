@@ -1,300 +1,34 @@
 <template>
-  <!-- <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div> -->
-
-    <div>
+  <div>
     <div class="wrapper">
       <myHeader />
-     <!-- <naviBar /> -->
-  <nav class="menu padding-site">
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/' class="menu__link">Home</router-link>
-    </div>
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Men</router-link>
-      <div class="menu__mega menu__mega_nav">
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <li>
-              <h3>Women</h3>
-            </li>
-            <li><a href="#">Dresses</a></li>
-            <li><a href="#">Tops</a></li>
-            <li><a href="#">Sweaters/Knits</a></li>
-            <li><a href="#">Jackets/Coats</a></li>
-            <li><a href="#">Blazers</a></li>
-            <li><a href="#">Denim</a></li>
-            <li><a href="#">Legging/Pants</a></li>
-            <li><a href="#">Skirts/Shorts</a></li>
-            <li><a href="#">Accessories</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <h3>Women</h3>
-            <li><a href="#">Dresses</a></li>
-            <li><a href="#">Tops</a></li>
-            <li><a href="#">Sweaters/Knits</a></li>
-            <li><a href="#">Jackets/Coats</a></li>
-          </ul>
-          <ul class="menu__megabox">
-            <h3>Women</h3>
-            <li><a href="#">Dresses</a></li>
-            <li><a href="#">Tops</a></li>
-            <li><a href="#">Sweaters/Knits</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <h3>Women</h3>
-            <li><a href="#">Dresses</a></li>
-            <li><a href="#">Tops</a></li>
-            <li><a href="#">Sweaters/Knits</a></li>
-            <li><a href="#">Jackets/Coats</a></li>
-          </ul>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
-        </div>
-      </div>
-    </div>
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Women</router-link>
-      <div class="menu__mega menu__mega_nav">
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <li>
-              <h3>Women</h3>
-            </li>
-            <li><a>Dresses</a></li>
-            <li><a>Tops</a></li>
-            <li><a>Sweaters/Knits</a></li>
-            <li><a>Jackets/Coats</a></li>
-            <li><a>Blazers</a></li>
-            <li><a>Denim</a></li>
-            <li><a>Legging/Pants</a></li>
-            <li><a>Skirts/Shorts</a></li>
-            <li><a>Accessories</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-          </div>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
-        </div>
-      </div>
-    </div>
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Kids</router-link>
-      <div class="menu__mega menu__mega_nav menu__mega_middle">
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <li>
-              <h3>Women</h3>
-            </li>
-            <li><a>Dresses</a></li>
-            <li><a>Tops</a></li>
-            <li><a>Sweaters/Knits</a></li>
-            <li><a>Jackets/Coats</a></li>
-            <li><a>Blazers</a></li>
-            <li><a>Denim</a></li>
-            <li><a>Legging/Pants</a></li>
-            <li><a>Skirts/Shorts</a></li>
-            <li><a>Accessories</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-          </div>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
-        </div>
-      </div>
-    </div>
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Accessories</router-link>
-      <div class="menu__mega menu__mega_nav menu__mega_middle">
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <li>
-              <h3>Women</h3>
-            </li>
-            <li><a>Dresses</a></li>
-            <li><a>Tops</a></li>
-            <li><a>Sweaters/Knits</a></li>
-            <li><a>Jackets/Coats</a></li>
-            <li><a>Blazers</a></li>
-            <li><a>Denim</a></li>
-            <li><a>Legging/Pants</a></li>
-            <li><a>Skirts/Shorts</a></li>
-            <li><a>Accessories</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-          </div>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
-        </div>
-      </div>
-    </div>
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Featured</router-link>
-      <div class="menu__mega menu__mega_nav menu__mega_last">
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <li>
-              <h3>Women</h3>
-            </li>
-            <li><a>Dresses</a></li>
-            <li><a>Tops</a></li>
-            <li><a>Sweaters/Knits</a></li>
-            <li><a>Jackets/Coats</a></li>
-            <li><a>Blazers</a></li>
-            <li><a>Denim</a></li>
-            <li><a>Legging/Pants</a></li>
-            <li><a>Skirts/Shorts</a></li>
-            <li><a>Accessories</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-          </div>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
-        </div>
-      </div>
-    </div>
-    <div class="menu__linkblock menu__linkblock_nav">
-      <router-link to='/catalog' class="menu__link">Hot Deals</router-link>
-      <div class="menu__mega menu__mega_nav menu__mega_last">
-        <div class="menu__megacolumn">
-          <ul class="menu__megabox">
-            <li>
-              <h3>Women</h3>
-            </li>
-            <li><a>Dresses</a></li>
-            <li><a>Tops</a></li>
-            <li><a>Sweaters/Knits</a></li>
-            <li><a>Jackets/Coats</a></li>
-            <li><a>Blazers</a></li>
-            <li><a>Denim</a></li>
-            <li><a>Legging/Pants</a></li>
-            <li><a>Skirts/Shorts</a></li>
-            <li><a>Accessories</a></li>
-          </ul>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-          </div>
-        </div>
-        <div class="menu__megacolumn">
-          <div class="menu__megabox">
-            <h3>Women</h3>
-            <a>Dresses</a>
-            <a>Tops</a>
-            <a>Sweaters/Knits</a>
-            <a>Jackets/Coats</a>
-          </div>
-          <img src="/assets/imgs/megamenu banner.png" alt="megamenu banner" />
-        </div>
-      </div>
-    </div>
-  </nav>
-  <router-view/>
+      <naviBar>
+        <template v-slot:home>
+          <router-link to="/" class="menu__link">Home</router-link>
+        </template>
+        <template v-slot:men>
+          <router-link to="/catalog" class="menu__link">Men</router-link>
+        </template>
+        <template v-slot:women>
+          <router-link to="/catalog" class="menu__link">Women</router-link>
+        </template>
+        <template v-slot:kids>
+          <router-link to="/catalog" class="menu__link">Kids</router-link>
+        </template>
+        <template #accessories>
+          <router-link to="/catalog" class="menu__link">Accessories</router-link>
+        </template>
+        <template #featured>
+          <router-link to="/catalog" class="menu__link">Featured</router-link>
+        </template>
+        <template #hotDeals>
+          <router-link to="/catalog" class="menu__link">Hot Deals</router-link>
+        </template>
+      </naviBar>
 
-      <subscribeSection/>
+      <router-view />
+
+      <subscribeSection />
       <div class="clr"></div>
     </div>
     <myFooter />
@@ -302,16 +36,16 @@
 </template>
 
 <script>
-  import myHeader from './components/header.vue';
-  import myFooter from './components/footer.vue';
-  // import naviBar from '../components/naviBar.vue'; // расширение дописываем обязательно, иначе webserver не сработает
-  import subscribeSection from './components/subscribeSection.vue';
+import myHeader from './components/header.vue';
+import myFooter from './components/footer.vue';
+import naviBar from './components/naviBar.vue'; // расширение дописываем обязательно, иначе webserver не сработает
+import subscribeSection from './components/subscribeSection.vue';
 
 export default {
   components: {
     myHeader,
     myFooter,
-    // naviBar,
+    naviBar,
     subscribeSection,
   },
 
@@ -322,13 +56,6 @@ export default {
     // },
   },
 };
-
-
 </script>
 
-
-<style lang="scss">
-
-</style>
-
-
+<style lang="scss"></style>

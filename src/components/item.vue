@@ -28,7 +28,7 @@
     <template v-if="type == 'catalog'">
       <div class="product">
         <img :src="item.img" class="product__img" :alt="'product-' + item.id" />
-        <a href="single_page.html" class="product__name">{{ item.name }}</a>
+        <router-link to="/single" class="product__name">{{ item.name }}</router-link>
         <p class="product__price">${{ item.price }}</p>
         <a href="#" class="product__cart">
           <img src="../assets/imgs/cart-white.png" alt="cart-white" />

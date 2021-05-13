@@ -3,9 +3,9 @@
     <nav class="f-link__section padding-site">
       <div class="f-link__left">
         <div class="logo">
-          <a href="index.html"
-            ><img src="../assets/imgs/logo.png" alt="logo"
-          /></a>
+          <router-link to="/">
+            <img src="../assets/imgs/logo.png" alt="logo"/>
+          </router-link>
           <p>bran<span>d</span></p>
         </div>
         <p class="f-link__desc">

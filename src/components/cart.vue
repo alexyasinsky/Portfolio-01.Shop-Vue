@@ -8,7 +8,9 @@
     <button class="cartdrop__button cartdrop__button_red hover">
       Checkout
     </button>
-    <button class="cartdrop__button hover">Go to cart</button>
+    <button class="cartdrop__button hover" @click='$parent.showCart = !$parent.showCart'>
+      <slot></slot>
+      </button>
   </div>
 </template>
 
