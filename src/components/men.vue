@@ -21,7 +21,7 @@ export default {
 
   data() {
     return {
-      url: 'api/catalog',
+      url: 'api/men',
       items: [],
     }
   },

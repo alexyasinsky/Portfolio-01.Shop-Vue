@@ -16,6 +16,22 @@ server.get('/catalog', (req, res) => {
   })
 });
 
+server.get('/men', (req, res) => {
+    fs.readFile('./server/db/men.json', 'utf-8', (err, data) => {
+        if (!err) {
+            res.json(JSON.parse(data));
+        }
+    })
+});
+
+server.get('/women', (req, res) => {
+    fs.readFile('./server/db/women.json', 'utf-8', (err, data) => {
+        if (!err) {
+            res.json(JSON.parse(data));
+        }
+    })
+});
+
 server.get('/cart', (req, res) => {
   fs.readFile('./server/db/cart.json', 'utf-8', (err, data) => {
       if (!err) {

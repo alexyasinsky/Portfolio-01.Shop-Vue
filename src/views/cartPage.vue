@@ -22,7 +22,7 @@
               <figure class="cart__product">
                 <a href="#"
                   ><img
-                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/man-1.png"
+                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-1.png"
                     alt="man-1"
                 /></a>
                 <figcaption>
@@ -45,7 +45,7 @@
               <figure class="cart__product">
                 <a href="#"
                   ><img
-                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/man-2.png"
+                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-2.png"
                     alt="man-2"
                 /></a>
                 <figcaption>
@@ -68,7 +68,7 @@
               <figure class="cart__product">
                 <a href="#"
                   ><img
-                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/man-3.png"
+                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-3.png"
                     alt="man-3"
                 /></a>
                 <figcaption>
