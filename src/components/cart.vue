@@ -1,6 +1,6 @@
 <template>
   <div class="cartdrop__box">
-    <item v-for="item in items" type="cart" :item="item" :key="item.id" />
+    <item v-for="item in items" type="cart" :item="item" :key="item.id" @remove="remove(item)"/>
     <div class="cartdrop__total">
       <p>Total</p>
       <p>$500.00</p>

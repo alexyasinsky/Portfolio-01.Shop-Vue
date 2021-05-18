@@ -19,7 +19,7 @@
           </p>
         </div>
         <div class="cartdrop__product-cancel">
-          <button type="button">
+          <button type="button" @click="$emit('remove', item)">
             <i class="fas fa-times-circle"></i>
           </button>
         </div>
@@ -30,10 +30,10 @@
         <img :src="item.img" class="product__img" :alt="'product-' + item.id" />
         <router-link to="/single" class="product__name">{{ item.name }}</router-link>
         <p class="product__price">${{ item.price }}</p>
-        <a href="#" class="product__cart">
+        <button class="product__cart" @click="$parent.$emit('add', item)">
           <img src="../assets/imgs/cart-white.png" alt="cart-white" />
-          <p>Add to Cart</p>
-        </a>
+          Add to Cart
+        </button>
       </div>
     </template>
   </div>

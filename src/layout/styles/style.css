@@ -489,7 +489,9 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.5s;
-  cursor: pointer;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 .product__cart img {
   height: 22px;

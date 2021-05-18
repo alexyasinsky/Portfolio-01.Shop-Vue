@@ -30,6 +30,7 @@ export default {
     get(this.url).then(d => {
       this.items = d;
       });
+    console.log(this);
   }
 };
 </script>

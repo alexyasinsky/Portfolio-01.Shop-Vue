@@ -561,9 +561,9 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.5s;
-    cursor: pointer;
-
-
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    overflow: hidden;
 
     img {
       height: 22px;

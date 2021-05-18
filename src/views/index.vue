@@ -48,7 +48,7 @@
           <h2>Fetured Items</h2>
           <h3>Shop for items based on what we featured in this week</h3>
           <!-- product__box -->
-          <catalog />
+          <catalog @add="addItem"/>
           <button
             class="product__button hover"
           >
@@ -109,7 +109,11 @@ export default {
   components: {
     catalog: catalog, // полная запись объявления компонента
   },
-
+methods: {
+    addItem(item) {
+      this.$root.$children[0].$refs.myHeader.$refs.myCart.add(item);
+    }
+}
 };
 </script>
 

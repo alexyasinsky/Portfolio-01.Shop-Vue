@@ -48,7 +48,7 @@
           <div class="cartdrop">
             <button @click='showCart = !showCart' class="hover cartdrop__showButton"></button>
             <!-- cartdrop__box -->
-            <cart  v-show="showCart">
+            <cart  v-show="showCart" ref="myCart">
               <router-link to="/cart">Go to Cart</router-link>
               </cart>
           </div>

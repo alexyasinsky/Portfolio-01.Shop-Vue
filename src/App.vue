@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
-      <myHeader />
+      <myHeader ref="myHeader"/>
       <naviBar>
         <template v-slot:home>
           <router-link to="/" class="menu__link">Home</router-link>
