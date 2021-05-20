@@ -3,7 +3,7 @@
     <item v-for="item in items" type="cart" :item="item" :key="item.id" @remove="remove(item)"/>
     <div class="cartdrop__total">
       <p>Total</p>
-      <p>$500.00</p>
+      <p>${{ totalSum }}</p>
     </div>
     <button class="cartdrop__button cartdrop__button_red hover">
       Checkout
@@ -30,9 +30,27 @@ export default {
     };
   },
 
+  methods: {
+
+  },
+
+  computed: {
+    totalSum: function () {
+      let sum = null;
+      this.items.forEach(item => {
+        sum += item.price * item.quantity;
+      });
+      if (sum == null) {
+        return 0;
+      } else {
+      return sum.toFixed(2);
+      }
+    }
+  },
+
   mounted() {
-    get(this.url).then((basket) => {
-      this.items = basket.content;
+    get(this.url).then((cart) => {
+      this.items = cart.content;
     });
     // this.$parent.$parent.parentGetData(this.url)
     // .then(d => { // обращение к методу из родительского компонента
