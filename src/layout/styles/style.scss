@@ -180,6 +180,12 @@ body {
   .cartdrop {
     position: relative;
 
+    &__message {
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+
     &__showButton {
       height: 30px;
       width: 30px;

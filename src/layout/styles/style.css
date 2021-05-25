@@ -162,6 +162,11 @@ body {
 .header .cartdrop {
   position: relative;
 }
+.header .cartdrop__message {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
 .header .cartdrop__showButton {
   height: 30px;
   width: 30px;

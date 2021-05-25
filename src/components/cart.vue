@@ -1,6 +1,7 @@
 <template>
   <div class="cartdrop__box">
     <item v-for="item in items" type="cart" :item="item" :key="item.id" @remove="remove(item)"/>
+    <p class="cartdrop__message" v-if="items.length == 0">Корзина пуста</p>
     <div class="cartdrop__total">
       <p>Total</p>
       <p>$500.00</p>
