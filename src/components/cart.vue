@@ -4,7 +4,7 @@
     <p class="cartdrop__message" v-if="items.length == 0">Корзина пуста</p>
     <div class="cartdrop__total">
       <p>Total</p>
-      <p>$500.00</p>
+      <p>${{ totalSum }}</p>
     </div>
     <button class="cartdrop__button cartdrop__button_red hover">
       Checkout
@@ -31,9 +31,35 @@ export default {
     };
   },
 
+  computed: {
+    totalSum: function () {
+      let sum = null;
+      this.items.forEach(item => {
+        sum += item.price * item.quantity;
+      });
+      if (sum == null) {
+        return 0;
+      } else {
+      return sum.toFixed(2);
+      }
+    },
+    totalQuantity: function () {
+      let qty = null;
+      this.items.forEach(item => {
+          qty += item.quantity;     
+      });
+      if (qty == null) {
+        return 0;
+      } else {
+        return qty;
+      }
+    },
+  },
+
+
   mounted() {
-    get(this.url).then((basket) => {
-      this.items = basket.content;
+    get(this.url).then((cart) => {
+      this.items = cart.content;
     });
     // this.$parent.$parent.parentGetData(this.url)
     // .then(d => { // обращение к методу из родительского компонента

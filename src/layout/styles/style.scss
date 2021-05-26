@@ -180,6 +180,20 @@ body {
   .cartdrop {
     position: relative;
 
+    &__qty {
+      position: absolute;
+      right: 18px;
+      top: 5px;
+      border-radius: 50%;
+      background-color: $colorOfElements;
+      height: 20px;
+      width: 20px;
+      text-align: center;
+      line-height: 20px;
+      z-index: 5;
+      color: white;
+    }
+
     &__message {
       height: 50px;
       text-align: center;
@@ -193,7 +207,6 @@ body {
       background-image: url(../../assets/imgs/cart.png);
       background-repeat: no-repeat;
       background-position: center;
-      padding: 10px;
       margin-top: 10px;
       margin-right: 25px;
     }
