@@ -1,6 +1,7 @@
 <template>
   <div class="cartdrop__box">
     <item v-for="item in items" type="cart" :item="item" :key="item.id" @remove="remove(item)"/>
+    <p class="cartdrop__message" v-if="items.length == 0">Корзина пуста</p>
     <div class="cartdrop__total">
       <p>Total</p>
       <p>${{ totalSum }}</p>
@@ -30,10 +31,6 @@ export default {
     };
   },
 
-  methods: {
-
-  },
-
   computed: {
     totalSum: function () {
       let sum = null;
@@ -45,8 +42,20 @@ export default {
       } else {
       return sum.toFixed(2);
       }
-    }
+    },
+    totalQuantity: function () {
+      let qty = null;
+      this.items.forEach(item => {
+          qty += item.quantity;     
+      });
+      if (qty == null) {
+        return 0;
+      } else {
+        return qty;
+      }
+    },
   },
+
 
   mounted() {
     get(this.url).then((cart) => {

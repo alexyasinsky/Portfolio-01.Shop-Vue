@@ -15,7 +15,7 @@
             <i class="fas fa-star-half-alt"></i>
           </p>
           <p class="cartdrop__product-pq">
-            {{ item.quantity }} <span>x</span> ${{ item.price.toFixed(2) }}
+            {{ item.quantity }} <span>x</span> ${{ item.price }}
           </p>
         </div>
         <div class="cartdrop__product-cancel">
@@ -29,7 +29,7 @@
       <div class="product">
         <img :src="item.img" class="product__img" :alt="'product-' + item.id" />
         <router-link to="/single" class="product__name">{{ item.name }}</router-link>
-        <p class="product__price">${{ item.price.toFixed(2) }}</p>
+        <p class="product__price">${{ item.price }}</p>
         <button class="product__cart" @click="$parent.$emit('add', item)">
           <img src="../assets/imgs/cart-white.png" alt="cart-white" />
           Add to Cart
