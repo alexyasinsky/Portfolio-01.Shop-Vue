@@ -46,7 +46,7 @@
     </div>
     <div class="header__rightbox">
       <div class="cartdrop">
-        <button @click='showCart = !showCart' class="cartdrop__showButton"><p class="cartdrop__qty"> {{ cartQuantity }} </p></button>
+        <button @click='showCart = !showCart' class="cartdrop__showButton"></button>
         <!-- cartdrop__box -->
         <cart  v-show="showCart" ref="myCart">
           <router-link to="/cart">Go to Cart</router-link>
@@ -72,16 +72,7 @@ export default {
       showCart: false,
       cartQuantity: null,
     }
-  },
-
-  mounted() {
-    this.cartQuantity = this.$refs.myCart.totalQuantity;
-    console.log(this);
-  },
-
-  updated() {
-    this.cartQuantity = this.$refs.myCart.totalQuantity;
-  },
+  }
 }
 
 

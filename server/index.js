@@ -52,6 +52,8 @@ server.post('/cart', (req, res) => {
                       res.sendStatus(500);
                   }
               })
+      } else {
+        console.log(err);
       }
   })
 })
@@ -68,6 +70,8 @@ server.put('/cart/:id', (req, res) => {
                       res.sendStatus(500);
                   }
               })
+      } else {
+        console.log(err);
       }
   })
 })
@@ -84,6 +88,8 @@ server.delete('/cart/:id', (req, res) => {
                       res.sendStatus(500);
                   }
               })
+      } else {
+        console.log(err);
       }
   })
 })
