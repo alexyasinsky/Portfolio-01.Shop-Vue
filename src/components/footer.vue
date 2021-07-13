@@ -72,4 +72,86 @@
 export default {};
 </script>
 
-<style></style>
+<style lang="scss">
+
+@import '../layout/styles/_variables.scss';
+footer {
+  height: 540px;
+  margin-top: -540px;
+
+  .f-link {
+    &__section {
+      height: 460px;
+      padding-top: 110px;
+      display: flex;
+    }
+
+    &__left {
+      width: 430px;
+    }
+
+    &__desc {
+      margin-top: 29px;
+      font-size: 14px;
+      font-weight: 300;
+      color: #898989;
+      line-height: 24px;
+    }
+
+    &__right {
+      display: flex;
+    }
+
+    &__column {
+      margin-left: 60px;
+      width: 160px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #f16d7f;
+        text-transform: uppercase;
+        margin-bottom: 55px;
+      }
+
+      a {
+        font-family: 'Lato';
+        font-size: 16px;
+        color: #898989;
+        line-height: 40px;
+        &:hover {
+          color: $colorOfElements;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e6e6;
+    font-size: 16px;
+    &__leftbox {
+      color: #7a7a7a;
+    }
+    &__rightbox {
+      display: flex;
+      a {
+        display: block;
+        height: 32px;
+        width: 32px;
+        line-height: 32px;
+        text-align: center;
+        background-color: #ffffff;
+        color: #b2b2b2;
+        margin-left: 8px;
+        &:hover {
+          background-color: $colorOfElements;
+        }
+      }
+    }
+  }
+}
+</style>

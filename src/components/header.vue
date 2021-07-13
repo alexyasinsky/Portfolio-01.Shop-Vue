@@ -78,6 +78,115 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
+
+@import '../layout/styles/_variables.scss';
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ececec;
+
+  &__leftbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__search-config {
+    margin-left: 37px;
+    height: 38px;
+    width: 87px;
+    background-color: rgba(245, 245, 245, 1);
+    border: 1px solid rgba(230, 230, 230, 1);
+
+    summary {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(34, 34, 34, 1);
+      line-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '\23F7';
+      margin-left: 4px;
+    }
+
+    &[open] > summary::after {
+      content: '\23F6';
+      margin-left: 4px;
+    }
+
+    .menu__mega {
+      z-index: 10;
+    }
+  }
+
+  &__searchfield {
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 0 3px 3px 0;
+    height: 38px;
+    width: 317px;
+    display: flex;
+
+    input[type='search'] {
+      margin-left: -1px;
+      width: 100%;
+      height: 100%;
+      padding: 0 15px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 32px;
+
+      &::placeholder {
+        color: #a4a4a4;
+      }
+    }
+
+    button {
+      width: 42px;
+      color: rgba(164, 164, 164, 1);
+      border-left: 1px solid #e6e6e6;
+      background-color: white;
+    }
+  }
+
+  &__rightbox {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  &__button {
+    height: 38px;
+    width: 130px;
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '\25BC';
+      color: white;
+      margin-left: 8px;
+    }
+
+    &[open] > summary::after {
+      content: '\25B2';
+      color: white;
+      margin-left: 8px;
+    }
+  }
+}
 
 </style>
