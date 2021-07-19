@@ -242,11 +242,19 @@ export default {
       color: black;
       display: block;
       line-height: 50px;
+      &:hover{
+        color: black; 
+      }
     }
 
     &_red {
-      color: $colorOfElements;
       border: 1px solid $colorOfElements;
+      a {
+        color: $colorOfElements;
+        &:hover {
+          color: $colorOfElements;
+        }
+      }
     }
   }
 }
