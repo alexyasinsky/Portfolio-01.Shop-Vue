@@ -61,6 +61,7 @@ export default {
   mounted() {
     get(this.url).then((cart) => {
       this.items = cart.content;
+      console.log('cart mounted');
     });
     // this.$parent.$parent.parentGetData(this.url)
     // .then(d => { // обращение к методу из родительского компонента
@@ -68,6 +69,13 @@ export default {
     //   console.log(this.items);
     //   });
   },
+
+  // updated() {
+  //   get(this.url).then((cart) => {
+  //     this.items = cart.content;
+  //     console.log('cart updated');
+  //   });
+  // },
 
   methods: {
     add(item) {

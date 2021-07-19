@@ -17,75 +17,7 @@
           <th>ACTIOn</th>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <figure class="cart__product">
-                <a href="#"
-                  ><img
-                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-1.png"
-                    alt="man-1"
-                /></a>
-                <figcaption>
-                  <h5>Mango People T-shirt</h5>
-                  <p>Color: <span>Red</span></p>
-                  <p>Size: <span>XL</span></p>
-                </figcaption>
-              </figure>
-            </td>
-            <td>150</td>
-            <td><input type="number" /></td>
-            <td>FREE</td>
-            <td>300</td>
-            <td>
-              <button type="button"><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <figure class="cart__product">
-                <a href="#"
-                  ><img
-                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-2.png"
-                    alt="man-2"
-                /></a>
-                <figcaption>
-                  <h5>Mango People T-shirt</h5>
-                  <p>Color: <span>Red</span></p>
-                  <p>Size: <span>XL</span></p>
-                </figcaption>
-              </figure>
-            </td>
-            <td>150</td>
-            <td><input type="number" /></td>
-            <td>FREE</td>
-            <td>300</td>
-            <td>
-              <button type="button"><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <figure class="cart__product">
-                <a href="#"
-                  ><img
-                    src="https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-3.png"
-                    alt="man-3"
-                /></a>
-                <figcaption>
-                  <h5>Mango People T-shirt</h5>
-                  <p>Color: <span>Red</span></p>
-                  <p>Size: <span>XL</span></p>
-                </figcaption>
-              </figure>
-            </td>
-            <td>150</td>
-            <td><input type="number" /></td>
-            <td>FREE</td>
-            <td>300</td>
-            <td>
-              <button type="button"><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
+          <item v-for="item in items" type="cartPage" :item="item" :key="item.id" @remove="remove(item)"/>
         </tbody>
       </table>
       <div class="cart__buttonbox">
@@ -132,13 +64,61 @@
 
 <script>
 import breadcrumbs from '../components/breadcrumbs.vue';
+import item from '../components/item.vue';
+import { get, put, del } from '../utils/reqs.js';
 
 export default {
   name: 'cartPage',
   components: {
+    item, 
     breadcrumbs,
   },
+
+  data() {
+    return {
+      url: 'api/cart',
+      items: [],
+    };
+  },
+  
+  mounted() {
+    get(this.url).then((cart) => {
+      this.items = cart.content;
+      console.log('cartPage mounted');
+    });
+  },
+
+  // updated() {
+  //   get(this.url).then((cart) => {
+  //     this.items = cart.content;
+  //     console.log('cartPage updated');
+  //   });
+  // },
+
+  methods: {
+    remove(item) {
+      let find = this.items.find((el) => el.id == item.id);
+      if (find.quantity > 1) {
+        put(`${this.url}/${item.id}`, -1).then((res) => {
+          if (res.status) {
+            find.quantity--;
+          } else {
+            console.log('Server err');
+          }
+        });
+      } else {
+        del(`${this.url}/${item.id}`).then((res) => {
+          if (res.status) {
+            this.items.splice(this.items.indexOf(find), 1);
+          } else {
+            console.log('Server err');
+          }
+        });
+      }
+    },
+  },
 };
+
 </script>
 
 <style lang="scss">
