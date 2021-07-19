@@ -129,125 +129,125 @@ export default {
 <style lang="scss">
 @import '../layout/styles/_variables.scss';
 
-  .cartdrop {
-    position: relative;
+.cartdrop {
+  position: relative;
 
-    &__message {
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-    }
+  &__message {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+  }
 
-    &__showButton {
-      height: 30px;
-      width: 30px;
-      background-color: white;
-      background-image: url(../assets/imgs/cart.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-top: 10px;
-      margin-right: 25px;
+  &__showButton {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    background-image: url(../assets/imgs/cart.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    margin-right: 25px;
+  }
+
+  img {
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 26px;
+  }
+
+  &__box {
+    position: absolute;
+    top: 39px;
+    width: 262px;
+    height: fit-content;
+    z-index: 1;
+    background-color: #fff;
+    padding: 35px 15px 20px;
+  }
+
+  &__product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    a {
+      padding: 0;
     }
 
     img {
-      height: 30px;
-      margin-top: 8px;
-      margin-right: 26px;
+      height: 85px;
+      width: 72px;
+      margin: 0;
     }
 
-    &__box {
-      position: absolute;
-      top: 39px;
-      width: 262px;
-      height: fit-content;
-      z-index: 1;
-      background-color: #fff;
-      padding: 35px 15px 20px;
-    }
+    &-desc {
+      margin-left: 15px;
+      max-width: 100px;
+      overflow: hidden;
 
-    &__product {
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-
-      a {
-        padding: 0;
-      }
-
-      img {
-        height: 85px;
-        width: 72px;
-        margin: 0;
-      }
-
-      &-desc {
-        margin-left: 15px;
-        max-width: 100px;
-        overflow: hidden;
-
-        h4 {
-          font-size: 12px;
-          font-weight: bold;
-          color: #222222;
-          text-transform: uppercase;
-          margin-bottom: 10px;
-        }
-      }
-
-      &-rate {
+      h4 {
         font-size: 12px;
-        color: #e4af48;
-        margin-bottom: 12px;
-      }
-
-      &-pq {
-        font-size: 12px;
-        color: $colorOfElements;
-        word-spacing: 5px;
-      }
-
-      &-cancel {
-        flex-grow: 1;
-
-        button {
-          font-size: 16px;
-          color: #c0c0c0;
-          float: right;
-        }
+        font-weight: bold;
+        color: #222222;
+        text-transform: uppercase;
+        margin-bottom: 10px;
       }
     }
 
-    &__total {
-      margin-top: 5px;
-      font-family: 'Lato';
-      font-size: 16px;
-      font-weight: bold;
-      color: #222222;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
+    &-rate {
+      font-size: 12px;
+      color: #e4af48;
+      margin-bottom: 12px;
     }
 
-    &__button {
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      height: 50px;
-      width: 100%;
-      border: 1px solid black;
-      background-color: white;
-      a {
-        color: black;
-        display: block;
-        line-height: 50px;
-      }
+    &-pq {
+      font-size: 12px;
+      color: $colorOfElements;
+      word-spacing: 5px;
+    }
 
-      &_red {
-        color: $colorOfElements;
-        border: 1px solid $colorOfElements;
+    &-cancel {
+      flex-grow: 1;
+
+      button {
+        font-size: 16px;
+        color: #c0c0c0;
+        float: right;
       }
     }
   }
+
+  &__total {
+    margin-top: 5px;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: bold;
+    color: #222222;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 50px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    a {
+      color: black;
+      display: block;
+      line-height: 50px;
+    }
+
+    &_red {
+      color: $colorOfElements;
+      border: 1px solid $colorOfElements;
+    }
+  }
+}
   </style>

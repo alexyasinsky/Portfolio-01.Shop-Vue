@@ -25,11 +25,13 @@
         </div>
       </div>
     </template>
-    
+
     <template v-if="type == 'catalog'">
       <div class="product">
         <img :src="item.img" class="product__img" :alt="'product-' + item.id" />
-        <router-link to="/single" class="product__name">{{ item.name }}</router-link>
+        <router-link to="/single" class="product__name">{{
+          item.name
+        }}</router-link>
         <p class="product__price">${{ item.price }}</p>
         <button class="product__cart" @click="$parent.$emit('add', item)">
           <img src="../assets/imgs/cart-white.png" alt="cart-white" />
@@ -39,29 +41,41 @@
     </template>
 
     <template v-if="type == 'cartPage'">
-          <tr>
-            <td>
-              <figure class="cart__product">
-                <a href="#">
-                  <img
-                    :src="item.img"
-                    :alt="'product-' + item.id"
-                /></a>
-                <figcaption>
-                  <h5><router-link to="/single" class="product__name">{{ item.name }}</router-link></h5>
-                  <p>Color: <span>Red</span></p>
-                  <p>Size: <span>XL</span></p>
-                </figcaption>
-              </figure>
-            </td>
-            <td>${{ item.price }}</td>
-            <td><input type="number" :value="item.quantity"/></td>
-            <td>FREE</td>
-            <td>{{item.price * item.quantity}}</td>
-            <td>
-              <button type="button" @click="$emit('remove', item)"><i class="fas fa-times-circle"></i></button>
-            </td>
-          </tr>
+        <div class="carttable__row">
+          <div class="carttable__col">
+            <figure class="cart__product">
+              <a href="#">
+                <img :src="item.img" :alt="'product-' + item.id"
+              /></a>
+              <figcaption>
+                <h5>
+                  <router-link to="/single">{{
+                    item.name
+                  }}</router-link>
+                </h5>
+                <p>Color: <span>Red</span></p>
+                <p>Size: <span>XL</span></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="carttable__col">
+            ${{ item.price }}
+          </div>
+          <div class="carttable__col">
+            <input type="number" :value="item.quantity" />
+          </div>
+          <div class="carttable__col">
+            FREE
+          </div>
+          <div class="carttable__col">
+            {{ item.price * item.quantity }}  
+          </div>
+          <div class="carttable__col">
+            <button type="button" @click="$emit('remove', item)">
+              <i class="fas fa-times-circle"></i>
+            </button>
+          </div>
+        </div> 
     </template>
   </div>
 </template>
@@ -70,22 +84,22 @@
 export default {
   name: 'item',
 
-  props: {                        // props - входные параметры компонента. Здесь 2 входных параметра - type и item. 
-    type: {                    // Задаются в верстке в теге размещения компонента.
-        type: String,          // В компонент нужно пробросить в виде параметров все данные, которые будут использоваться в
-        default: 'catalog'     // в нем. Поэтому мы пробрасываем объект item из API сюда. Названия пропсов в коде могут быть 
-    },                         // в стиле camelCase, но в верстке они обязательно должны быть kebab-case (HTML 
-    item: { type: Object }     // регистронезависим)!!! 
+  props: {
+    // props - входные параметры компонента. Здесь 2 входных параметра - type и item.
+    type: {
+      // Задаются в верстке в теге размещения компонента.
+      type: String, // В компонент нужно пробросить в виде параметров все данные, которые будут использоваться в
+      default: 'catalog', // в нем. Поэтому мы пробрасываем объект item из API сюда. Названия пропсов в коде могут быть
+    }, // в стиле camelCase, но в верстке они обязательно должны быть kebab-case (HTML
+    item: { type: Object }, // регистронезависим)!!!
   },
-
 };
 </script>
 
 <style lang="scss">
+@import '../layout/styles/_variables.scss';
 
-  @import '../layout/styles/_variables.scss';
-
-  .product {
+.product {
   &__section {
     padding-top: 100px;
 
@@ -150,7 +164,7 @@ export default {
     justify-content: center;
     transition: all 0.5s;
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     overflow: hidden;
 
     img {
@@ -178,7 +192,6 @@ export default {
     transform: scale(1.05);
   }
 
-
   &__button {
     display: block;
     margin: 0 auto;
@@ -187,87 +200,107 @@ export default {
     background-color: $colorOfElements;
     font-size: 16px;
     font-weight: bold;
-    
+
     text-align: center;
-    
+
     a {
       color: #ffffff;
       line-height: 54px;
       display: block;
     }
   }
+}
+
+.carttable {
+
+  &__row {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0;
+    align-items: center;
   }
 
-  tr,
-  thead {
-  border-bottom: 1px solid #eaeaea;
-  }
-  td {
-  text-align: center;
-  padding: 22px 0;
-  font-size: 13px;
-  color: #656565;
-  line-height: 20px;
-  }
+  &__col {
+    padding: 0 30px;
+    text-align: center;
+    font-size: 13px;
+    color: #656565;
+    line-height: 20px;
 
-  td:last-child {
-  text-align: right;
-
-  button {
-    background-color: white;
-    padding: 15px;
-  }
-
-  i {
-    font-size: 16px;
-    color: #c0c0c0;
-  }
-  }
-
-  input[type='number'] {
-  height: 30px;
-  width: 54px;
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  padding: 0 5px;
-  text-align: center;
-  }
-
-  input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  }
-
-  .cart__product {
-  display: flex;
-
-  img {
-    height: 115px;
-    width: 100px;
-    margin-right: 21px;
-  }
-
-  figcaption {
-    margin-top: 13px;
-    text-align: left;
-
-    h5 {
-      font-size: 13px;
-      color: #222222;
-      text-transform: uppercase;
-      margin-bottom: 38px;
+    &:first-child {
+      padding: 0;
+      width: 400px;
     }
 
-    p {
-      font-size: 13px;
-      color: #575757;
-      line-height: 20px;
+    &:last-child {
+      padding: 0;
+      text-align: right;
 
-      span {
-        font-weight: 300;
-        color: #6f6e6e;
+      button {
+        background-color: white;
+        padding: 15px;
+      }
+
+      i {
+        font-size: 16px;
+        color: #c0c0c0;
+      }
+    }
+
+    input[type='number'] {
+      height: 30px;
+      width: 54px;
+      background-color: #ffffff;
+      border: 1px solid #eaeaea;
+      padding: 0 5px;
+      text-align: center;
+    }
+
+    input[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    .cart__product {
+      display: flex;
+
+      img {
+        height: 115px;
+        width: 100px;
+        margin-right: 21px;
+      }
+
+      figcaption {
+        margin-top: 13px;
+        text-align: left;
+
+        h5 {
+          font-size: 13px;
+          margin-bottom: 38px;
+          a {
+            color: #222222;
+            text-transform: uppercase;
+            &:hover {
+              color: $colorOfElements;
+            }
+          }
+        }
+
+        p {
+          font-size: 13px;
+          color: #575757;
+          line-height: 20px;
+
+          span {
+            font-weight: 300;
+            color: #6f6e6e;
+          }
+        }
       }
     }
   }
-  }
+}
+
 
 </style>

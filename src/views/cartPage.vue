@@ -7,19 +7,23 @@
       </template>
     </breadcrumbs>
     <section class="cart padding-site">
-      <table>
-        <thead>
-          <th>Product Details</th>
-          <th>unit Price</th>
-          <th>Quantity</th>
-          <th>shipping</th>
-          <th>Subtotal</th>
-          <th>ACTIOn</th>
-        </thead>
-        <tbody>
-          <item v-for="item in items" type="cartPage" :item="item" :key="item.id" @remove="remove(item)"/>
-        </tbody>
-      </table>
+      <div class="carttable">
+        <div class="carttable__row carttable__row_header">
+          <div class="carttable__col">Product Details</div>
+          <div class="carttable__col">unit Price</div>
+          <div class="carttable__col">Quantity</div>
+          <div class="carttable__col">shipping</div>
+          <div class="carttable__col">Subtotal</div>
+          <div class="carttable__col">ACTIOn</div>
+        </div>
+        <item
+          v-for="item in items"
+          type="cartPage"
+          :item="item"
+          :key="item.id"
+          @remove="remove(item)"
+        />
+      </div>
       <div class="cart__buttonbox">
         <button type="button" class="cart__button hover">
           cLEAR SHOPPING CART
@@ -50,10 +54,7 @@
         <div class="cart__total">
           <h5>Sub Total <span>$900</span></h5>
           <h3>Grand Total <span>$900</span></h3>
-          <button
-            type="button"
-            class="hover"
-          >
+          <button type="button" class="hover">
             <router-link to="/checkout">Proceed to checkout</router-link>
           </button>
         </div>
@@ -70,7 +71,7 @@ import { get, put, del } from '../utils/reqs.js';
 export default {
   name: 'cartPage',
   components: {
-    item, 
+    item,
     breadcrumbs,
   },
 
@@ -80,7 +81,7 @@ export default {
       items: [],
     };
   },
-  
+
   mounted() {
     get(this.url).then((cart) => {
       this.items = cart.content;
@@ -118,11 +119,9 @@ export default {
     },
   },
 };
-
 </script>
 
 <style lang="scss">
-
 @import '../layout/styles/_variables.scss';
 
 .cart {
@@ -132,98 +131,26 @@ export default {
     width: 1140px;
     margin-bottom: 44px;
 
-    tr,
     thead {
       border-bottom: 1px solid #eaeaea;
-    }
-
-    thead {
       padding-bottom: 20px;
-    }
 
-    th {
-      font-size: 13px;
-      font-weight: bold;
-      color: #222222;
-      letter-spacing: -0.01em;
-      line-height: 20px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    th:first-child {
-      text-align: left;
-    }
-
-    th:last-child {
-      text-align: right;
-    }
-
-    td {
-      text-align: center;
-      padding: 22px 0;
-      font-size: 13px;
-      color: #656565;
-      line-height: 20px;
-    }
-
-    td:last-child {
-      text-align: right;
-
-      button {
-        background-color: white;
-        padding: 15px;
-      }
-
-      i {
-        font-size: 16px;
-        color: #c0c0c0;
-      }
-    }
-
-    input[type='number'] {
-      height: 30px;
-      width: 54px;
-      background-color: #ffffff;
-      border: 1px solid #eaeaea;
-      padding: 0 5px;
-      text-align: center;
-    }
-
-    input[type='number']::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-  }
-
-  &__product {
-    display: flex;
-
-    img {
-      height: 115px;
-      width: 100px;
-      margin-right: 21px;
-    }
-
-    figcaption {
-      margin-top: 13px;
-      text-align: left;
-
-      h5 {
+      td {
         font-size: 13px;
+        font-weight: bold;
         color: #222222;
+        letter-spacing: -0.01em;
+        line-height: 20px;
         text-transform: uppercase;
-        margin-bottom: 38px;
+        text-align: center;
       }
 
-      p {
-        font-size: 13px;
-        color: #575757;
-        line-height: 20px;
+      td:first-child {
+        text-align: left;
+      }
 
-        span {
-          font-weight: 300;
-          color: #6f6e6e;
-        }
+      td:last-child {
+        text-align: right;
       }
     }
   }
@@ -362,4 +289,42 @@ export default {
   }
 }
 
+.carttable {
+  width: 1140px;
+  margin-bottom: 44px;
+
+  &__row {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0;
+    align-items: center;
+
+    &_header {
+      .carttable__col {
+        font-size: 13px;
+        font-weight: bold;
+        color: #222222;
+        letter-spacing: -0.01em;
+        line-height: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0 30px;
+
+        &:first-child {
+          text-align: left;
+          padding: 0;
+          width: 400px;
+        }
+
+        &:last-child {
+          text-align: right;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+}
 </style>
