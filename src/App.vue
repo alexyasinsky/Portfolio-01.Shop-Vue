@@ -42,6 +42,7 @@ import naviBar from './components/naviBar.vue'; // расширение допи
 import subscribeSection from './components/subscribeSection.vue';
 
 export default {
+  name: 'app',
   components: {
     myHeader,
     myFooter,

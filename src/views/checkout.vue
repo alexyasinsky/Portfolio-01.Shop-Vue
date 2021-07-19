@@ -228,6 +228,7 @@
 import breadcrumbs from '../components/breadcrumbs.vue';
 
 export default {
+  name: 'checkout',
   components: {
     breadcrumbs,
   },

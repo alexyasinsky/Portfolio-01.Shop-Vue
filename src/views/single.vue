@@ -193,6 +193,7 @@ import breadcrumbs from '../components/breadcrumbs.vue';
 import women from '../components/women.vue';
 
 export default {
+  name: 'single',
   components: {
     breadcrumbs,
     women

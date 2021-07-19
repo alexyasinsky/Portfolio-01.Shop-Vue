@@ -134,6 +134,7 @@
 import breadcrumbs from '../components/breadcrumbs.vue';
 
 export default {
+  name: 'cartPage',
   components: {
     breadcrumbs,
   },

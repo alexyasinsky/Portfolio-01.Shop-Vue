@@ -69,7 +69,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'myFooter',
+};
 </script>
 
 <style lang="scss">

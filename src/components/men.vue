@@ -15,6 +15,7 @@ import { get } from '../utils/reqs.js'
 
 
 export default {
+  name: 'men',
   components: {
     item, 
   },

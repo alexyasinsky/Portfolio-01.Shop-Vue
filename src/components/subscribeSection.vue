@@ -104,7 +104,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'subscribeSection',
+};
 </script>
 
 <style lang="scss">

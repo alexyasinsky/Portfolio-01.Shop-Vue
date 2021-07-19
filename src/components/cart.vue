@@ -6,11 +6,11 @@
       <p>Total</p>
       <p>${{ totalSum }}</p>
     </div>
-    <button class="cartdrop__button cartdrop__button_red hover">
-      Checkout
+    <button class="cartdrop__button cartdrop__button_red hover"  @click='$parent.showCart = !$parent.showCart'>
+      <slot name="checkout"></slot>
     </button>
     <button class="cartdrop__button hover" @click='$parent.showCart = !$parent.showCart'>
-      <slot></slot>
+      <slot name='cart'></slot>
       </button>
   </div>
 </template>
@@ -20,6 +20,7 @@ import item from './item.vue';
 import { get, put, post, del } from '../utils/reqs.js';
 
 export default {
+  name: 'cart',
   components: {
     item,
   },

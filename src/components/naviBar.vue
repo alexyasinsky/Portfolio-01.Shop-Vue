@@ -283,7 +283,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'naviBar',
+};
 </script>
 
 <style lang="scss">

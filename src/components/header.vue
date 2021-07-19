@@ -49,7 +49,12 @@
         <button @click='showCart = !showCart' class="cartdrop__showButton"></button>
         <!-- cartdrop__box -->
         <cart  v-show="showCart" ref="myCart">
-          <router-link to="/cart">Go to Cart</router-link>
+          <template v-slot:checkout>
+            <router-link to="/checkout">Checkout</router-link>
+          </template>
+          <template v-slot:cart>
+            <router-link to="/cart">Go to Cart</router-link>
+          </template>
           </cart>
       </div>
       <button class="header__button button hover">
@@ -63,6 +68,7 @@
 import cart from '../components/cart.vue';
 
 export default {
+  name: 'myHeader',
   components: {
     cart, // краткая запись объявления компонента
   },

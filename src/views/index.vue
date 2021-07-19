@@ -106,6 +106,7 @@
 import catalog from '../components/catalog.vue';
 
 export default {
+  name: 'index',
   components: {
     catalog: catalog, // полная запись объявления компонента
   },

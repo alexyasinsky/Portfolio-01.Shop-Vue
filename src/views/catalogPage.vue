@@ -246,6 +246,7 @@ import breadcrumbs from '../components/breadcrumbs.vue';
 import men from '../components/men.vue';
 
 export default {
+  name: 'catalogPage',
   components: {
     men,
     breadcrumbs,
