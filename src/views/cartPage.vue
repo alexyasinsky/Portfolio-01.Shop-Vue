@@ -99,24 +99,14 @@ export default {
   methods: {
     remove(item) {
       let find = this.items.find((el) => el.id == item.id);
-      if (find.quantity > 1) {
-        put(`${this.url}/${item.id}`, -1).then((res) => {
-          if (res.status) {
-            find.quantity--;
-          } else {
-            console.log('Server err');
-          }
-        });
-      } else {
-        del(`${this.url}/${item.id}`).then((res) => {
+      del(`${this.url}/${item.id}`).then((res) => {
           if (res.status) {
             this.items.splice(this.items.indexOf(find), 1);
           } else {
             console.log('Server err');
           }
         });
-      }
-    },
+    }
   },
 };
 </script>
