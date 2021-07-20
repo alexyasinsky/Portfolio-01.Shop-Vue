@@ -66,7 +66,8 @@
 <script>
 import breadcrumbs from '../components/breadcrumbs.vue';
 import item from '../components/item.vue';
-import { get, put, del } from '../utils/reqs.js';
+import { get, del } from '../utils/reqs.js';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'cartPage',
@@ -78,15 +79,30 @@ export default {
   data() {
     return {
       url: 'api/cart',
-      items: [],
+      dataFromStore: [],
     };
   },
 
+
+  computed: {
+    ...mapGetters([
+      'getCartData',
+    ]),
+    items() {
+      return this.getCartData;
+    }
+  },
+
+
+
   mounted() {
-    get(this.url).then((cart) => {
-      this.items = cart.content;
-      console.log('cartPage mounted');
-    });
+    this.fetchCartData(); 
+    // get(this.url).then((cart) => {
+    //   this.items = cart.content;
+    //   console.log('cartPage mounted');
+    //   console.log(this.getCartData);
+    // });
+
   },
 
   // updated() {
@@ -97,6 +113,9 @@ export default {
   // },
 
   methods: {
+    ...mapActions([
+      'fetchCartData',
+    ]),
     remove(item) {
       let find = this.items.find((el) => el.id == item.id);
       del(`${this.url}/${item.id}`).then((res) => {
