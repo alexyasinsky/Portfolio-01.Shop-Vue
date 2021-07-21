@@ -21,7 +21,7 @@
           type="cartPage"
           :item="item"
           :key="item.id"
-          @remove="removeCartItem(item)"
+          @remove="deleteCartItem(item)"
         />
       </div>
       <div class="cart__buttonbox">
@@ -66,7 +66,6 @@
 <script>
 import breadcrumbs from '../components/breadcrumbs.vue';
 import item from '../components/item.vue';
-import { get, del } from '../utils/reqs.js';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -78,55 +77,27 @@ export default {
 
   data() {
     return {
-      url: 'api/cart',
-      dataFromStore: [],
     };
   },
 
-
   computed: {
     ...mapGetters([
-      'getCartData',
+      'showCartData',
     ]),
     items() {
-      return this.getCartData;
+      return this.showCartData;
     }
   },
 
-
-
   mounted() {
-    this.fetchCartData(); 
-    // get(this.url).then((cart) => {
-    //   this.items = cart.content;
-    //   console.log('cartPage mounted');
-    //   console.log(this.getCartData);
-    // });
-
+    this.getCartData(); 
   },
-
-  // updated() {
-  //   get(this.url).then((cart) => {
-  //     this.items = cart.content;
-  //     console.log('cartPage updated');
-  //   });
-  // },
 
   methods: {
     ...mapActions([
-      'fetchCartData',
-      'removeCartItem'
+      'getCartData',
+      'deleteCartItem'
     ]),
-    // remove(item) {
-    //   let find = this.items.find((el) => el.id == item.id);
-    //   del(`${this.url}/${item.id}`).then((res) => {
-    //       if (res.status) {
-    //         this.items.splice(this.items.indexOf(find), 1);
-    //       } else {
-    //         console.log('Server err');
-    //       }
-    //     });
-    // }
   },
 };
 </script>

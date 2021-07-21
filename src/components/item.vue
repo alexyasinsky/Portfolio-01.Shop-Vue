@@ -19,7 +19,7 @@
           </p>
         </div>
         <div class="cartdrop__product-cancel">
-          <button type="button" @click="$emit('remove', item)">
+          <button type="button" @click="removeCartItem(item)">
             <i class="fas fa-times-circle"></i>
           </button>
         </div>
@@ -33,7 +33,7 @@
           item.name
         }}</router-link>
         <p class="product__price">${{ item.price }}</p>
-        <button class="product__cart" @click="$parent.$emit('add', item)">
+        <button class="product__cart" @click="addCartItem(item)">
           <img src="../assets/imgs/cart-white.png" alt="cart-white" />
           Add to Cart
         </button>
@@ -81,6 +81,8 @@
 </template>
 
 <script>
+
+import { mapActions } from 'vuex';
 export default {
   name: 'item',
 
@@ -93,6 +95,14 @@ export default {
     }, // в стиле camelCase, но в верстке они обязательно должны быть kebab-case (HTML
     item: { type: Object }, // регистронезависим)!!!
   },
+
+  methods: {
+      ...mapActions([
+        'addCartItem',
+        'removeCartItem'
+      ]),
+    },
+
 };
 </script>
 

@@ -4,7 +4,7 @@
     <p class="cartdrop__message" v-if="items.length == 0">Корзина пуста</p>
     <div class="cartdrop__total">
       <p>Total</p>
-      <p>${{ totalSum }}</p>
+      <!-- <p>${{ totalSum }}</p> -->
     </div>
     <button class="cartdrop__button cartdrop__button_red hover"  @click='$parent.showCart = !$parent.showCart'>
       <slot name="checkout"></slot>
@@ -17,7 +17,7 @@
 
 <script>
 import item from './item.vue';
-import { get, put, post, del } from '../utils/reqs.js';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'cart',
@@ -27,100 +27,50 @@ export default {
 
   data() {
     return {
-      url: 'api/cart',
-      items: [],
     };
   },
 
   computed: {
-    totalSum: function () {
-      let sum = null;
-      this.items.forEach(item => {
-        sum += item.price * item.quantity;
-      });
-      if (sum == null) {
-        return 0;
-      } else {
-      return sum.toFixed(2);
-      }
+    ...mapGetters([
+      'showCartData',
+    ]),
+    items() {
+      return this.showCartData;
     },
-    totalQuantity: function () {
-      let qty = null;
-      this.items.forEach(item => {
-          qty += item.quantity;     
-      });
-      if (qty == null) {
-        return 0;
-      } else {
-        return qty;
-      }
-    },
+    // totalSum: function () {
+    //   let sum = null;
+    //   this.items.forEach(item => {
+    //     sum += item.price * item.quantity;
+    //   });
+    //   if (sum == null) {
+    //     return 0;
+    //   } else {
+    //   return sum.toFixed(2);
+    //   }
+    // },
+    // totalQuantity: function () {
+    //   let qty = null;
+    //   this.items.forEach(item => {
+    //       qty += item.quantity;     
+    //   });
+    //   if (qty == null) {
+    //     return 0;
+    //   } else {
+    //     return qty;
+    //   }
+    // },
   },
 
 
   mounted() {
-    get(this.url).then((cart) => {
-      this.items = cart.content;
-      console.log('cart mounted');
-    });
-    // this.$parent.$parent.parentGetData(this.url)
-    // .then(d => { // обращение к методу из родительского компонента
-    //   this.items = d.content;
-    //   console.log(this.items);
-    //   });
+    this.getCartData(); 
   },
 
-  // updated() {
-  //   get(this.url).then((cart) => {
-  //     this.items = cart.content;
-  //     console.log('cart updated');
-  //   });
-  // },
-
   methods: {
-    add(item) {
-      let find = this.items.find((el) => el.id == item.id);
-      if (!find) {
-        let newItem = Object.assign({}, item, {
-          quantity: 1,
-        });
-        post(this.url, newItem).then((res) => {
-          if (res.status) {
-            this.items.push(newItem);
-          } else {
-            console.log('Server err');
-          }
-        });
-      } else {
-        put(`${this.url}/${item.id}`, 1).then((res) => {
-          if (res.status) {
-            find.quantity++;
-          } else {
-            console.log('Server err');
-          }
-        });
-      }
-    },
-    remove(item) {
-      let find = this.items.find((el) => el.id == item.id);
-      if (find.quantity > 1) {
-        put(`${this.url}/${item.id}`, -1).then((res) => {
-          if (res.status) {
-            find.quantity--;
-          } else {
-            console.log('Server err');
-          }
-        });
-      } else {
-        del(`${this.url}/${item.id}`).then((res) => {
-          if (res.status) {
-            this.items.splice(this.items.indexOf(find), 1);
-          } else {
-            console.log('Server err');
-          }
-        });
-      }
-    },
+    ...mapActions([
+      'getCartData',
+      'removeCartItem'
+    ]),
   },
 };
 
