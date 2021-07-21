@@ -7,14 +7,14 @@
         /
       </template>
       <template v-slot:title>
-        Banana T-shirt
+        {{ item.name }}
       </template>
     </breadcrumbs>
     <section id="carouselExampleControls" class="carousel slide single-carousel" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active single-carousel__slide">
           <div class="single-carousel__img">
-            <img src="../assets/imgs/product-big.png" alt="product-big">
+            <img :src="item.img" alt="product-big">
           </div>
           <div class="single-carousel__desc padding-site">
             <h5>WOMEN COLLECTION</h5>
@@ -23,7 +23,7 @@
               <div class="single-carousel__line_red"></div>
               <div class="single-carousel__line"></div>
             </div>
-            <h4>Moschino Cheap And Chic</h4>
+            <h4>{{ item.name }}</h4>
             <p class="single-carousel__text">Compellingly actualize fully researched processes before proactive
               outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely
               visualize parallel core competencies rather than exceptional portals.</p>
@@ -31,7 +31,7 @@
               <p>Material:<span>Cotton</span></p>
               <p>Designer:<span>Binburhan</span></p>
             </div>
-            <p class="single-carousel__price">$561</p>
+            <p class="single-carousel__price">${{ item.price }}</p>
             <div class="single-carousel__hl"></div>
             <div class="single-carousel__selectorbox">
               <div class="single-carousel__selector">
@@ -59,7 +59,7 @@
                 <input type="number" name="quantity" placeholder='1' id="quantity">
               </div>
             </div>
-            <button class='single-carousel__button hover' type="button">
+            <button class='single-carousel__button hover' type="button" @click='addCartItem(item)'>
               <img src="../assets/imgs/cart-red.png" alt="cart-red">
               <p>Add to cart</p>
             </button>
@@ -192,6 +192,7 @@
 import breadcrumbs from '../components/breadcrumbs.vue';
 import women from '../components/women.vue';
 import { getItem } from '../utils/reqs.js';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'single',
@@ -208,9 +209,15 @@ export default {
     }
   },
 
+  methods: {
+    ...mapActions([
+      'addCartItem',
+    ]),
+  },
+
   mounted() {
     console.log(this.$route.path);
-    getItem(`${this.url}${this.$route.path}`)
+    getItem(`api${this.$route.path}`)
     .then(data => {
       this.item = data;
       console.log(this.item);

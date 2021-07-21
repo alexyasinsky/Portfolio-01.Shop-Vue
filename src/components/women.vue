@@ -5,13 +5,15 @@
       type='catalog'
       :item='item' 
       :key='item.id'
+      @add='addCartItem(item)'
     />
   </div>
 </template>
 
 <script>
 import item from './item.vue';
-import { get } from '../utils/reqs.js'
+import { get } from '../utils/reqs.js';
+import { mapActions } from 'vuex';
 
 
 export default {
@@ -25,6 +27,12 @@ export default {
       url: 'api/women',
       items: [],
     }
+  },
+
+  methods: {
+    ...mapActions([
+      'addCartItem',
+    ]),
   },
 
   mounted() {

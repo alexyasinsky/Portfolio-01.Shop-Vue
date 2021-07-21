@@ -29,7 +29,7 @@
     <template v-if="type == 'catalog'">
       <div class="product">
         <img :src="item.img" class="product__img" :alt="'product-' + item.id" />
-        <router-link to="/single" class="product__name">{{
+        <router-link :to="'/single' + item.id" class="product__name">{{
           item.name
         }}</router-link>
         <p class="product__price">${{ item.price }}</p>

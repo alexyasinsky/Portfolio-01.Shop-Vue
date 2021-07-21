@@ -18,6 +18,7 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'catalog',
+  
   components: {
     item, 
   },
