@@ -19,7 +19,7 @@
           </p>
         </div>
         <div class="cartdrop__product-cancel">
-          <button type="button" @click="removeCartItem(item)">
+          <button type="button" @click="$emit('remove', item)">
             <i class="fas fa-times-circle"></i>
           </button>
         </div>
@@ -33,7 +33,7 @@
           item.name
         }}</router-link>
         <p class="product__price">${{ item.price }}</p>
-        <button class="product__cart" @click="addCartItem(item)">
+        <button class="product__cart" @click="$emit('add', item)">
           <img src="../assets/imgs/cart-white.png" alt="cart-white" />
           Add to Cart
         </button>
@@ -82,7 +82,6 @@
 
 <script>
 
-import { mapActions } from 'vuex';
 export default {
   name: 'item',
 
@@ -97,10 +96,6 @@ export default {
   },
 
   methods: {
-      ...mapActions([
-        'addCartItem',
-        'removeCartItem'
-      ]),
     },
 
 };

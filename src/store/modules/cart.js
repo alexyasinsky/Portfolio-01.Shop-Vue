@@ -17,6 +17,9 @@ export default {
     INCREASE_QTY_OF_ITEM (state, item) {
       state.items[state.items.indexOf(item)].quantity += 1;
     },
+    DECREASE_QTY_OF_ITEM (state, item) {
+      state.items[state.items.indexOf(item)].quantity -= 1;
+    },
     DELETE_CART_ITEM (state, item) {
       state.items.splice(state.items.indexOf(item), 1);
     }
@@ -49,6 +52,27 @@ export default {
         });
       }
     },
+    removeCartItem({ commit, state }, item) {
+      let find = state.items.find((el) => el.id == item.id);
+      if (find.quantity > 1) {
+        put(`${state.url}/${item.id}`, -1).then((res) => {
+          if (res.status) {
+            commit('DECREASE_QTY_OF_ITEM', find);
+          } else {
+            console.log('Server err');
+          }
+        });
+      } else {
+      del(`${state.url}/${item.id}`)
+        .then((res) => {
+          if (res.status) {
+            commit('DELETE_CART_ITEM', find);
+          } else {
+            console.log('Server err');
+          }
+        });
+      }
+    },
     deleteCartItem({ commit, state }, item) {
       let find = state.items.find((el) => el.id == item.id);
       del(`${state.url}/${item.id}`)
@@ -60,54 +84,18 @@ export default {
         }
       });
     },
-    // add(item) {
-    //   let find = this.items.find((el) => el.id == item.id);
-    //   if (!find) {
-    //     let newItem = Object.assign({}, item, {
-    //       quantity: 1,
-    //     });
-    //     post(this.url, newItem).then((res) => {
-    //       if (res.status) {
-    //         this.items.push(newItem);
-    //       } else {
-    //         console.log('Server err');
-    //       }
-    //     });
-    //   } else {
-    //     put(`${this.url}/${item.id}`, 1).then((res) => {
-    //       if (res.status) {
-    //         find.quantity++;
-    //       } else {
-    //         console.log('Server err');
-    //       }
-    //     });
-    //   }
-    // },
-    // remove(item) {
-    //   let find = this.items.find((el) => el.id == item.id);
-    //   if (find.quantity > 1) {
-    //     put(`${this.url}/${item.id}`, -1).then((res) => {
-    //       if (res.status) {
-    //         find.quantity--;
-    //       } else {
-    //         console.log('Server err');
-    //       }
-    //     });
-    //   } else {
-    //     del(`${this.url}/${item.id}`).then((res) => {
-    //       if (res.status) {
-    //         this.items.splice(this.items.indexOf(find), 1);
-    //       } else {
-    //         console.log('Server err');
-    //       }
-    //     });
-    //   }
-    // },
   },
 
   getters: {
-    showCartData(state) {
+    showCartItems(state) {
       return state.items;
+    },
+    totalSumOfCart(state) {
+      let sum = null;
+      state.items.forEach(item => {
+        sum += item.price * item.quantity;
+      });
+      return sum;
     }
   },
 }

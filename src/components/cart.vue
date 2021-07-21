@@ -1,17 +1,29 @@
 <template>
   <div class="cartdrop__box">
-    <item v-for="item in items" type="cart" :item="item" :key="item.id" @remove="remove(item)"/>
+    <item 
+      v-for="item in items" 
+      type="cart" 
+      :item="item" 
+      :key="item.id" 
+      @remove="removeCartItem(item)"
+    />
     <p class="cartdrop__message" v-if="items.length == 0">Корзина пуста</p>
     <div class="cartdrop__total">
       <p>Total</p>
-      <!-- <p>${{ totalSum }}</p> -->
+      <p>${{ totalSumOfCart }}</p>
     </div>
-    <button class="cartdrop__button cartdrop__button_red hover"  @click='$parent.showCart = !$parent.showCart'>
+    <button
+      class="cartdrop__button cartdrop__button_red hover"
+      @click="$parent.showCart = !$parent.showCart"
+    >
       <slot name="checkout"></slot>
     </button>
-    <button class="cartdrop__button hover" @click='$parent.showCart = !$parent.showCart'>
-      <slot name='cart'></slot>
-      </button>
+    <button
+      class="cartdrop__button hover"
+      @click="$parent.showCart = !$parent.showCart"
+    >
+      <slot name="cart"></slot>
+    </button>
   </div>
 </template>
 
@@ -26,54 +38,31 @@ export default {
   },
 
   data() {
-    return {
-    };
+    return {};
   },
 
   computed: {
     ...mapGetters([
-      'showCartData',
+      'showCartItems',
+      'totalSumOfCart',
+
     ]),
     items() {
-      return this.showCartData;
+      return this.showCartItems;
     },
-    // totalSum: function () {
-    //   let sum = null;
-    //   this.items.forEach(item => {
-    //     sum += item.price * item.quantity;
-    //   });
-    //   if (sum == null) {
-    //     return 0;
-    //   } else {
-    //   return sum.toFixed(2);
-    //   }
-    // },
-    // totalQuantity: function () {
-    //   let qty = null;
-    //   this.items.forEach(item => {
-    //       qty += item.quantity;     
-    //   });
-    //   if (qty == null) {
-    //     return 0;
-    //   } else {
-    //     return qty;
-    //   }
-    // },
   },
 
-
   mounted() {
-    this.getCartData(); 
+    this.getCartData();
   },
 
   methods: {
     ...mapActions([
       'getCartData',
       'removeCartItem'
-    ]),
+      ]),
   },
 };
-
 </script>
 
 <style lang="scss">
@@ -192,8 +181,8 @@ export default {
       color: black;
       display: block;
       line-height: 50px;
-      &:hover{
-        color: black; 
+      &:hover {
+        color: black;
       }
     }
 
@@ -208,4 +197,4 @@ export default {
     }
   }
 }
-  </style>
+</style>

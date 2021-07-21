@@ -52,8 +52,8 @@
           <button type="submit" class="hover">Apply Coupon</button>
         </form>
         <div class="cart__total">
-          <h5>Sub Total <span>$900</span></h5>
-          <h3>Grand Total <span>$900</span></h3>
+          <h5>Sub Total <span>${{ totalSumOfCart }}</span></h5>
+          <h3>Grand Total <span>${{ totalSumOfCart }}</span></h3>
           <button type="button" class="hover">
             <router-link to="/checkout">Proceed to checkout</router-link>
           </button>
@@ -76,28 +76,25 @@ export default {
   },
 
   data() {
-    return {
-    };
+    return {};
   },
 
   computed: {
     ...mapGetters([
-      'showCartData',
+      'showCartItems',
+      'totalSumOfCart'
     ]),
     items() {
-      return this.showCartData;
-    }
+      return this.showCartItems;
+    },
   },
 
   mounted() {
-    this.getCartData(); 
+    this.getCartData();
   },
 
   methods: {
-    ...mapActions([
-      'getCartData',
-      'deleteCartItem'
-    ]),
+    ...mapActions(['getCartData', 'deleteCartItem']),
   },
 };
 </script>
@@ -306,6 +303,5 @@ export default {
       }
     }
   }
-
 }
 </style>
