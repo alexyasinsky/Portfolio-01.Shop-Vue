@@ -21,7 +21,7 @@
           type="cartPage"
           :item="item"
           :key="item.id"
-          @remove="remove(item)"
+          @remove="removeCartItem(item)"
         />
       </div>
       <div class="cart__buttonbox">
@@ -115,17 +115,18 @@ export default {
   methods: {
     ...mapActions([
       'fetchCartData',
+      'removeCartItem'
     ]),
-    remove(item) {
-      let find = this.items.find((el) => el.id == item.id);
-      del(`${this.url}/${item.id}`).then((res) => {
-          if (res.status) {
-            this.items.splice(this.items.indexOf(find), 1);
-          } else {
-            console.log('Server err');
-          }
-        });
-    }
+    // remove(item) {
+    //   let find = this.items.find((el) => el.id == item.id);
+    //   del(`${this.url}/${item.id}`).then((res) => {
+    //       if (res.status) {
+    //         this.items.splice(this.items.indexOf(find), 1);
+    //       } else {
+    //         console.log('Server err');
+    //       }
+    //     });
+    // }
   },
 };
 </script>
