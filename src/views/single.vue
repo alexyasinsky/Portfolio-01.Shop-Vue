@@ -113,7 +113,7 @@
               </div>
             </div>
             <button class='single-carousel__button hover' type="button">
-              <img src="assets/imgs/cart-red.png" alt="cart-red">
+              <img src="../assets/imgs/cart-red.png" alt="cart-red">
               <p>Add to cart</p>
             </button>
           </div>
@@ -166,7 +166,7 @@
               </div>
             </div>
             <button class='single-carousel__button hover' type="button">
-              <img src="assets/imgs/cart-red.png" alt="cart-red">
+              <img src="../assets/imgs/cart-red.png" alt="cart-red">
               <p>Add to cart</p>
             </button>
           </div>
@@ -191,13 +191,33 @@
 <script>
 import breadcrumbs from '../components/breadcrumbs.vue';
 import women from '../components/women.vue';
+import { getItem } from '../utils/reqs.js';
 
 export default {
   name: 'single',
+
   components: {
     breadcrumbs,
     women
   },
+
+  data() {
+    return {
+      item: {},
+      url: 'api',
+    }
+  },
+
+  mounted() {
+    console.log(this.$route.path);
+    getItem(`${this.url}${this.$route.path}`)
+    .then(data => {
+      this.item = data;
+      console.log(this.item);
+    });
+    
+  }
+
 };
 </script>
 

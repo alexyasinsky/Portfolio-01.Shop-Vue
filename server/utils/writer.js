@@ -6,7 +6,7 @@ module.exports = async function(url, data) {
         return true;
     }
     catch(err) {
-        console.log("WRITE FILE ERR2");
+        console.log("WRITE FILE ERR");
         return false;
     }
 }

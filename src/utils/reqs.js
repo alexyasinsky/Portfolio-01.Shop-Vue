@@ -1,5 +1,7 @@
 export let get = url => fetch(url).then(data => data.json());
 
+export let getItem = url => fetch(url).then(data => data.json());
+
 export let post = (url, item) => {
   return fetch(url, {
       method: 'POST',

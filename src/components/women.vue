@@ -30,7 +30,7 @@ export default {
   mounted() {
     get(this.url).then(d => {
       this.items = d;
-      });
+    });
   }
 };
 </script>

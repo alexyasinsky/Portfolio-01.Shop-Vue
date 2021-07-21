@@ -16,6 +16,14 @@ server.get('/catalog', (req, res) => {
   })
 });
 
+server.get('/single:id', (req, res) => {
+  fs.readFile('./server/db/catalog.json', 'utf-8', (err, data) => {
+      if (!err) {
+        res.json(JSON.parse(data).find(item => item.id == req.params.id));
+      }
+  })
+});
+
 server.get('/men', (req, res) => {
     fs.readFile('./server/db/men.json', 'utf-8', (err, data) => {
         if (!err) {

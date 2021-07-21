@@ -32,7 +32,7 @@ const routes = [
     component: checkout,
   },
   {
-    path: '/single',
+    path: '/single:id',
     name: 'Single',
     component: single,
   } 
