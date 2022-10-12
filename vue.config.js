@@ -17,6 +17,7 @@ module.exports = {
     }, 
 
     publicPath: process.env.NODE_ENV === 'production'
-    ? './'
-    : '/',
+      // ? './'
+    ? '/Portfolio-01.Shop-Vue.git/'
+    : '/'
 }
