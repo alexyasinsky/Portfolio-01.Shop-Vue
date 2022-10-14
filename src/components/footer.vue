@@ -24,7 +24,7 @@
         <div class="f-link__column">
           <h3>Company</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Shop</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">How It Works</a></li>
@@ -44,18 +44,18 @@
         <div class="f-link__column">
           <h3>Shop Category</h3>
           <ul>
-            <li><a href="catalog.html">Men</a></li>
-            <li><a href="catalog.html">Women</a></li>
-            <li><a href="catalog.html">Child</a></li>
-            <li><a href="catalog.html">Apparel</a></li>
-            <li><a href="catalog.html">Brows All</a></li>
+            <li><a href="/catalog">Men</a></li>
+            <li><a href="/catalog">Women</a></li>
+            <li><a href="/catalog">Child</a></li>
+            <li><a href="/catalog">Apparel</a></li>
+            <li><a href="/catalog">Brows All</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <section class="copyright padding-site">
       <div class="copyright__leftbox">
-        <p>&copy; 2017 Brand All Rights Reserved.</p>
+        <p>&copy; 2021 Brand All Rights Reserved.</p>
       </div>
       <div class="copyright__rightbox">
         <a href="#"><i class="fab fa-facebook-f"></i></a>

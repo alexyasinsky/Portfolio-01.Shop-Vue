@@ -48,11 +48,12 @@
           <h2>Fetured Items</h2>
           <h3>Shop for items based on what we featured in this week</h3>
           <!-- product__box -->
-          <catalog @add="addItem"/>
+          <catalog @add="addCartItem" :limit="8"/>
           <button
+            @click="browseAllButtonHandler"
             class="product__button hover"
           >
-            <router-link to="/catalog">Browse all product <i class="fas fa-long-arrow-alt-right"></i></router-link> 
+           Browse all product <i class="fas fa-long-arrow-alt-right"></i>
           </button>
         </section>
         <section class="feature__section feature__section_index padding-site">
@@ -68,8 +69,8 @@
               <figcaption class="feature__desc feature__desc_index">
                 <h4>Free Delivery</h4>
                 <p>
-                  Worldwide delivery on all. Authorit tively morph
-                  next-generation innov tion with extensive models.
+                  Worldwide delivery on all. Authoritatively morph
+                  next-generation innovation with extensive models.
                 </p>
               </figcaption>
             </figure>
@@ -80,8 +81,8 @@
               <figcaption class="feature__desc feature__desc_index">
                 <h4>Sales & discounts</h4>
                 <p>
-                  Worldwide delivery on all. Authorit tively morph
-                  next-generation innov tion with extensive models.
+                  Worldwide delivery on all. Authoritatively morph
+                  next-generation innovation with extensive models.
                 </p>
               </figcaption>
             </figure>
@@ -92,8 +93,8 @@
               <figcaption class="feature__desc feature__desc_index">
                 <h4>Quality assurance</h4>
                 <p>
-                  Worldwide delivery on all. Authorit tively morph
-                  next-generation innov tion with extensive models.
+                  Worldwide delivery on all. Authoritatively morph
+                  next-generation innovation with extensive models.
                 </p>
               </figcaption>
             </figure>
@@ -104,6 +105,7 @@
 
 <script>
 import catalog from '../components/catalog.vue';
+import {mapActions} from "vuex";
 
 export default {
   name: 'index',
@@ -111,9 +113,15 @@ export default {
     catalog: catalog, // полная запись объявления компонента
   },
 methods: {
-    addItem(item) {
-      this.$root.$children[0].$refs.myHeader.$refs.myCart.add(item);
+    ...mapActions([
+        'addCartItem'
+    ]),
+    browseAllButtonHandler(){
+      this.$router.push('/catalog');
     }
+    // addItem(item) {
+    //   this.$root.$children[0].$refs.myHeader.$refs.myCart.add(item);
+    // }
 }
 };
 </script>
@@ -251,7 +259,7 @@ methods: {
   }
 
   &__right {
-    padding: 48px 30px 20px 30px;
+    padding: 40px 30px 10px 30px;
     background-color: #222224;
   }
 
@@ -283,7 +291,7 @@ methods: {
     &_index {
       margin-left: 30px;
       width: 230px;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
     }
 
     &_catalog {

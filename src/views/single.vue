@@ -183,23 +183,23 @@
     </section>
     <section class="also">
       <h3>You may like also</h3>
-      <women class="product__box padding-site"/>
+      <catalog :limit="4" gender="female" class="product__box padding-site"/>
     </section>
   </main>
 </template>
 
 <script>
 import breadcrumbs from '../components/breadcrumbs.vue';
-import women from '../components/women.vue';
-import { getItem } from '../utils/reqs.js';
+import { getItem } from '@/utils/reqs.js';
 import { mapActions } from 'vuex';
+import Catalog from "@/components/catalog";
 
 export default {
   name: 'single',
 
   components: {
+    Catalog,
     breadcrumbs,
-    women
   },
 
   data() {
@@ -216,11 +216,9 @@ export default {
   },
 
   mounted() {
-    console.log(this.$route.path);
     getItem(`api${this.$route.path}`)
     .then(data => {
       this.item = data;
-      console.log(this.item);
     });
     
   }

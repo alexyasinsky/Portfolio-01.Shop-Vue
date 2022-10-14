@@ -18,6 +18,14 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'catalog',
+
+  props: {
+    limit: Number,
+    gender: {
+      type: String,
+      default: ''
+    }
+  },
   
   components: {
     item, 
@@ -34,12 +42,27 @@ export default {
     ...mapActions([
       'addCartItem',
     ]),
+    formItems(array) {
+      if (!this.gender) {
+        for (let i = 0; i < this.limit; i++) {
+          this.items.push(array[i])
+        }
+      } else {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i].gender === this.gender) {
+            this.items.push(array[i]);
+          }
+          if (this.items.length === this.limit) break;
+        }
+      }
+    }
   },
 
   mounted() {
-    get(this.url).then(d => {
-      this.items = d;
-      });
+    get(this.url).then(dataArray => {
+      this.formItems(dataArray);
+    });
+
   }
 };
 </script>

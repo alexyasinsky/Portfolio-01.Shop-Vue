@@ -58,7 +58,7 @@
           </cart>
       </div>
       <button class="header__button button hover">
-        My Account <i class="fas fa-caret-down"></i>
+        My Account<i class="fas fa-caret-right"></i>
       </button>
     </div>
   </header>
@@ -123,12 +123,12 @@ export default {
     }
 
     summary::after {
-      content: '\23F7';
+      content: '\25B8';
       margin-left: 4px;
     }
 
     &[open] > summary::after {
-      content: '\23F6';
+      content: ' \25BE';
       margin-left: 4px;
     }
 
@@ -176,6 +176,9 @@ export default {
   &__button {
     height: 38px;
     width: 130px;
+    i {
+      margin-left: 7px;
+    }
 
     summary::-webkit-details-marker {
       display: none;

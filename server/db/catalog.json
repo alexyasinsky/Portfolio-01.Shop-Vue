@@ -3,49 +3,148 @@
     "id": 1, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-1.png", 
     "name": "Mango People T-shirt", 
-    "price": "52.00"
+    "price": "52.00",
+    "gender": "male"
   },
   {
     "id": 2, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-2.png", 
     "name": "Banana People T-shirt", 
-    "price": "122.00"
+    "price": "122.00",
+    "gender": "female"
   },
   {
     "id": 3, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-3.png", 
     "name": "Apple People T-shirt", 
-    "price": "68.00"
+    "price": "68.00",
+    "gender": "male"
   },
   {
     "id": 4, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-4.png", 
     "name": "Cherry People T-shirt", 
-    "price": "40.00"
+    "price": "40.00",
+    "gender": "female"
   },
   {
     "id": 5, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-5.png", 
     "name": "Cucumber People T-shirt", 
-    "price": "152.00"
+    "price": "152.00",
+    "gender": "female"
   },
   {
     "id": 6, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-6.png", 
     "name": "Pineapple People T-shirt", 
-    "price": "2.00"
+    "price": "2.00",
+    "gender": "male"
   },
   {
     "id": 7, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-7.png", 
     "name": "Coconut People T-shirt", 
-    "price": "29.00"
+    "price": "29.00",
+    "gender": "male"
   },
   {
     "id": 8, 
     "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/product-8.png", 
-    "name": "Dragonfruit People T-shirt", 
-    "price": "500.00"
+    "name": "Dragon fruit People T-shirt",
+    "price": "500.00",
+    "gender": "male"
+  },
+  {
+    "id": 11,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-1.png",
+    "name": "Mango People T-shirt",
+    "price": "52.00",
+    "gender": "male"
+  },
+  {
+    "id": 12,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-2.png",
+    "name": "Banana People T-shirt",
+    "price": "122.00",
+    "gender": "male"
+  },
+  {
+    "id": 13,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-3.png",
+    "name": "Apple People T-shirt",
+    "price": "68.00",
+    "gender": "male"
+  },
+  {
+    "id": 14,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-4.png",
+    "name": "Cherry People T-shirt",
+    "price": "40.00",
+    "gender": "male"
+  },
+  {
+    "id": 15,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-5.png",
+    "name": "Cucumber People T-shirt",
+    "price": "152.00",
+    "gender": "male"
+  },
+  {
+    "id": 16,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-6.png",
+    "name": "Pineapple People T-shirt",
+    "price": "2.00",
+    "gender": "male"
+  },
+  {
+    "id": 17,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-7.png",
+    "name": "Coconut People T-shirt",
+    "price": "29.00",
+    "gender": "male"
+  },
+  {
+    "id": 18,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-8.png",
+    "name": "Dragonfruit People T-shirt",
+    "price": "500.00",
+    "gender": "male"
+  },
+  {
+    "id": 19,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/man-9.png",
+    "name": "Dragonfruit People T-shirt",
+    "price": "500.00",
+    "gender": "male"
+  },
+  {
+    "id": 21,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/woman-1.png",
+    "name": "Mango People T-shirt",
+    "price": "52.00",
+    "gender": "female"
+  },
+  {
+    "id": 22,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/woman-2.png",
+    "name": "Banana People T-shirt",
+    "price": "122.00",
+    "gender": "female"
+  },
+  {
+    "id": 23,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/woman-3.png",
+    "name": "Apple People T-shirt",
+    "price": "68.00",
+    "gender": "female"
+  },
+  {
+    "id": 24,
+    "img": "https://raw.githubusercontent.com/alexyasinsky/GB-web-1.3-static/main/imgs/woman-4.png",
+    "name": "Cherry People T-shirt",
+    "price": "40.00",
+    "gender": "female"
   }
 ]
   

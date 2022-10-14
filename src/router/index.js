@@ -35,9 +35,7 @@ const routes = [
     path: '/single:id',
     name: 'Single',
     component: single,
-  } 
-
-
+  }
 
 ]
 

@@ -49,13 +49,6 @@ export default {
     naviBar,
     subscribeSection,
   },
-
-  methods: {
-    // parentGetData(url) {
-    //   // можно методы сохранять в родительском компоненте. Обращаемся к нему в cart,vue
-    //   return fetch(url).then((data) => data.json());
-    // },
-  },
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="type == 'cart'">
+    <template v-if="type === 'cart'">
       <div class="cartdrop__product">
         <a href="single_page.html">
           <img :src="item.img" :alt="'product-' + item.id" />
@@ -26,7 +26,7 @@
       </div>
     </template>
 
-    <template v-if="type == 'catalog'">
+    <template v-if="type === 'catalog'">
       <div class="product">
         <img :src="item.img" class="product__img" :alt="'product-' + item.id" />
         <router-link :to="'/single' + item.id" class="product__name">{{
@@ -40,7 +40,7 @@
       </div>
     </template>
 
-    <template v-if="type == 'cartPage'">
+    <template v-if="type === 'cartPage'">
         <div class="carttable__row">
           <div class="carttable__col">
             <figure class="cart__product">
@@ -205,7 +205,7 @@ export default {
     background-color: $colorOfElements;
     font-size: 16px;
     font-weight: bold;
-
+    color: white;
     text-align: center;
 
     a {

@@ -184,7 +184,7 @@
           </select>
           </div>
         </form>
-        <men/>
+        <catalog :limit="9" gender="male"/>
         <div class="catalog__controls">
           <p class="catalog__pages">
             <i class="fas fa-chevron-left"></i>
@@ -243,12 +243,12 @@
 
 <script>
 import breadcrumbs from '../components/breadcrumbs.vue';
-import men from '../components/men.vue';
+import catalog from "@/components/catalog";
 
 export default {
   name: 'catalogPage',
   components: {
-    men,
+    catalog,
     breadcrumbs,
   },
 };
@@ -292,7 +292,7 @@ export default {
     }
 
     summary::after {
-      content: '\23F7';
+      content: '\25B8';
     }
 
     details[open] summary {
@@ -300,7 +300,7 @@ export default {
     }
 
     details[open] > summary::after {
-      content: '\23F6';
+      content: '\25BE';
     }
     ul {
       margin-left: 17px;
@@ -427,7 +427,7 @@ export default {
       }
 
       &__variant::after {
-        content: '\23F7';
+        content: '\25BE';
         position: absolute;
         top: 6px;
         right: 5px;
